@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  /* Replace orange with charcoal/gray accents */
+  --primary: 64, 64, 64;
+  --primary-foreground: 255, 255, 255;
+  /* Add gradient button variables */
+  --color-background: #0a0a0a;
+  --color-text: #ffffff;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.overflow-y-auto {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dark {
+  --primary: 64, 64, 64;
+  --primary-foreground: 255, 255, 255;
+}
+
+@layer utilities {
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Add rotating gradient animation for buttons */
+@property --r {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.rotatingGradient {
+  background: conic-gradient(from var(--r), #3a3a3a, #6a6a6a, #4a4a4a, #7a7a7a, #3a3a3a);
+  animation: rotating 3s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    --r: 0deg;
+  }
+  100% {
+    --r: 360deg;
+  }
+}
