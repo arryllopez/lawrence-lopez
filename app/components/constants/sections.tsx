@@ -42,7 +42,7 @@ export const sections: Section[] = [
       },
       {
         role: "Summer Camp Counsellor",
-        company: "STEM CAMP",
+        company: "STEM Camp",
         period: "June 2024 - August 2025",
       },
     ],
