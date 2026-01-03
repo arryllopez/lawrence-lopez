@@ -49,8 +49,8 @@ export const sections: Section[] = [
   },
   {
     id: "contact",
-    title: "Get In Touch",
-    content: "Have a question or want to work together? Send me a message.",
+    title: "",
+    content: "",
     isContactForm: true,
   },
 ]
